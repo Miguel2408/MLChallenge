@@ -59,3 +59,28 @@ Response: **Status: 403**, false, is a human DNA
 
 ```
 
+## Run local environment
+
+* Prerequisites
+  * [NodeJS] (https://github.com/nodesource/distributions/blob/master/README.md)
+  * [NPM] (https://www.npmjs.com/get-npm) / [YARN] (https://classic.yarnpkg.com/en/docs/install#debian-stable)
+  * [XAMPP] (https://www.apachefriends.org/es/index.html)
+
+```
+mkdir api-mutants
+
+cd api-mutants
+
+git clone https://github.com/Miguel2408/MLChallenge.git
+ 
+```
+I was using Yarn so to start the app'
+```
+yarn start-dev
+
+```
+If youd ecide to use NPM
+
+```
+npm start-dev
+```
