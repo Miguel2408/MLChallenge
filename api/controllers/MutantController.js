@@ -152,7 +152,7 @@ const MutantController = () => {
   }
 
   const ratio = (mutants, humans) => {
-    if( (mutant == 0  && humans == 0)) return 0;
+    if( (mutants == 0  && humans == 0)) return 0;
     if (humans == 0) return mutants;
     return mutants/humans;
   }

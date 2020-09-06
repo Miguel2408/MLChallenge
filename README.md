@@ -5,13 +5,13 @@ The api receives a DNA represented by a matrix of NxN (an array of strings) and 
 ## Api BASE URL
 
 ```
-BASE_URL
+https://api-mutants-ml.herokuapp.com/
 ```
 
 ## Api Docs:
 
 ```
-BASE_URL/api-docs
+https://api-mutants-ml.herokuapp.com/api-docs
 ```
 
 ### Endpoints:
