@@ -1,11 +1,15 @@
 const DnaData = require('../models/DnaData');
+
 const mutantSecuences = {
-  A: "AAAA",
-  T: "TTTT",
-  C: "CCCC",
-  G: "GGGG"
-}
-  /**
+  A: 'AAAA',
+  T: 'TTTT',
+  C: 'CCCC',
+  G: 'GGGG'
+};
+
+const MutantController = () => {
+
+    /**
   * Verify DNA String
   *
   * @route POST /mutant/
@@ -18,22 +22,22 @@ const mutantSecuences = {
   * @returns 403 - Forbidden
   * @returns 500 - Internal Server Error
   */
-const MutantController = () => {
   const checkDna = async (req, res) => {
     const { body } = req;
     try {
-      let dna = body.dna
-      if (!validate(dna)){
+      const dna = body.dna;
+      if (!validate(dna)) {
         return res.status(400).json({msg: "invalid DNA"});
       }
-
-      let DnaDataRow = await DnaData.findOne({
+      // Search if DNA was verified before
+      const DnaDataRow = await DnaData.findOne({
         where: {
           dna: JSON.stringify(dna), 
         }
       })
       if (DnaDataRow) return res.status(400).json({msg: "DNA already verified"});
-      let matrixDna = dna.map(function (r) {
+
+      const matrixDna = dna.map(function (r) {
         return Object.keys(dna[0]).map(function (c) {
           return r[c];
         });
@@ -55,6 +59,8 @@ const MutantController = () => {
       secuenceMatch += simpleSearch(getDiagonals(dna))
       secuenceMatch += simpleSearch(getDiagonals(reverseDna))
       let is_mutant = secuenceMatch >= 3 ? true : false
+
+      //Save result
       await DnaData.create({
         dna: dna, 
         is_mutant: is_mutant,
@@ -70,6 +76,7 @@ const MutantController = () => {
     }
     
   };
+
   /**
   * Return Stats
   *

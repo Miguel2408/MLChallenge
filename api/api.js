@@ -31,7 +31,7 @@ const DB = dbService(environment, config.migrate).start();
 // configure to only allow requests from certain origins
 app.use(cors());
 
-//Swagger Doc
+// Swagger Doc
 const expressSwagger = require('express-swagger-generator')(app);
 
 expressSwagger(config.swaggerOptions);
