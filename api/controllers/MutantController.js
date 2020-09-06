@@ -15,6 +15,7 @@ const mutantSecuences = {
   * @param {Dna.model} dna.body.required - Dna
   * @returns {boolean} 200 - true/false Mutant Dna Verification
   * @returns 400 - Bad Request
+  * @returns 403 - Forbidden
   * @returns 500 - Internal Server Error
   */
 const MutantController = () => {
