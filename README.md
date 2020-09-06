@@ -14,7 +14,7 @@ BASE_URL
 BASE_URL/api-docs
 ```
 
-##Endpoints:
+### Endpoints:
 
  * POST /mutant/ 
    - Request body with DNA
@@ -25,7 +25,7 @@ BASE_URL/api-docs
 
 ## Examples:
 
-###POST /mutant/ 
+### POST /mutant/ 
 
 ```
 {
@@ -47,7 +47,7 @@ Response: **Status: 403**, false, is a human DNA
 
 * If the same DNA is sent then the response will be **Status: 400**, DNA already verified
 
-###Get /stats
+### Get /stats
 
 
 ```
