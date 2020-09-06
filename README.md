@@ -21,7 +21,7 @@ BASE_URL/api-docs
    - Reponse boolean DNA verification result
 
  * Get /stats
-   - Response Mutant and Human DNA amount with ration
+   - Response Mutant and Human DNA amount with ratio
 
 ## Examples:
 
