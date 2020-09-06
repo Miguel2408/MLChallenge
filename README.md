@@ -1,6 +1,6 @@
 # Mutants Api
 
-The api receives a DNA represented by a matrix of NxN (an array of strings) and verify if the DNA is Mutant or Human
+The api receives a DNA represented by a matrix of NxN (an array of strings) and verify if the DNA is Mutant or Human, then the result is stored in a mysql database to retrieve related stats.
 
 ## Api BASE URL
 
@@ -74,12 +74,12 @@ cd api-mutants
 git clone https://github.com/Miguel2408/MLChallenge.git
  
 ```
-I was using Yarn so to start the app'
+I was using Yarn so to start the app:
 ```
 yarn start-dev
 
 ```
-If youd ecide to use NPM
+If you decide to use Npm:
 
 ```
 npm start-dev
