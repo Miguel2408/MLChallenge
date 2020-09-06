@@ -5,13 +5,13 @@ const options = {
             title: 'Mutant DNA',
             version: '1.0.0',
         },
-        host: "localhost:5000",
+        host: process.env.SWAGGER_HOST || "localhost:5000",
         basePath: '/',
         produces: [
             "application/json",
             "application/xml"
         ],
-        schemes: ['http', 'https'],
+        schemes: ['https', 'http'],
 
     },
     basedir: __dirname, //app absolute path
