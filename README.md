@@ -76,7 +76,7 @@ git clone https://github.com/Miguel2408/MLChallenge.git
 ```
 I was using Yarn so to start the app:
 ```
-yarn start-dev
+yarn run start-dev
 
 ```
 If you decide to use Npm:
