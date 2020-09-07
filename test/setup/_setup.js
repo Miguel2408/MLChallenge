@@ -4,19 +4,17 @@ const mapRoutes = require('express-routes-mapper');
 
 const config = require('../../config/');
 const database = require('../../config/database');
-const auth = require('../../api/policies/auth.policy');
+
 
 const beforeAction = async () => {
   const testapp = express();
   const mappedOpenRoutes = mapRoutes(config.publicRoutes, 'api/controllers/');
-  const mappedAuthRoutes = mapRoutes(config.privateRoutes, 'api/controllers/');
+
 
   testapp.use(bodyParser.urlencoded({ extended: false }));
   testapp.use(bodyParser.json());
 
-  testapp.all('/private/*', (req, res, next) => auth(req, res, next));
-  testapp.use('/public', mappedOpenRoutes);
-  testapp.use('/private', mappedAuthRoutes);
+  testapp.use('/', mappedOpenRoutes);
 
 
   await database.authenticate();
